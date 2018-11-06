@@ -2,7 +2,7 @@ import { PropTypes as T } from 'prop-types'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-class ExampleComponent extends Component {
+class PizzaComponent extends Component {
   static propTypes = {
     className: T.string,
     text: T.string,
@@ -11,15 +11,13 @@ class ExampleComponent extends Component {
   render() {
     const { className, text } = this.props
 
-    return <div className={`${className} example`}>Example Component: {text}</div>
+    return <div className={`${className} pizza`}>Pizza Component: {text}</div>
   }
 }
 
-const Example = styled(ExampleComponent)`
-  border: solid 1px #dedede;
+const Pizza = styled(PizzaComponent)`
   color: red;
-  margin: 1rem;
-  padding: 1rem;
 `
 
-export default Example
+/** @component */
+export default Pizza

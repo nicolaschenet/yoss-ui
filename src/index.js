@@ -1,1 +1,1 @@
-export Example from './components/Example'
+export Pizza from './components/Pizza'

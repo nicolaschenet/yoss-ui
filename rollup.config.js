@@ -14,16 +14,17 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
+      globals: { 'styled-components': 'styled' },
       sourcemap: true,
     },
     {
       file: pkg.module,
       format: 'es',
+      globals: { 'styled-components': 'styled' },
       sourcemap: true,
     },
   ],
   external: ['styled-components'],
-  globals: { 'styled-components': 'styled' },
   plugins: [
     external(),
     postcss({
@@ -33,7 +34,6 @@ export default {
     svgr(),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers'],
     }),
     resolve(),
     commonjs(),
