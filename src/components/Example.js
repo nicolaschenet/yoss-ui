@@ -1,19 +1,17 @@
-import React, { Component } from 'react'
 import { PropTypes as T } from 'prop-types'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 class ExampleComponent extends Component {
   static propTypes = {
     className: T.string,
-    text: T.string
+    text: T.string,
   }
 
   render() {
     const { className, text } = this.props
 
-    return (
-      <div className={`${className} example`}>Example Component: {text}</div>
-    )
+    return <div className={`${className} example`}>Example Component: {text}</div>
   }
 }
 
