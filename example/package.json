@@ -9,6 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
+    "styled-components": "^4.0.3",
     "yoss-ui": "link:.."
   },
   "scripts": {

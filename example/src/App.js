@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import ExampleComponent from 'yoss-ui'
+import { Example } from "yoss-ui";
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Example text="Modern React component module" />
       </div>
-    )
+    );
   }
 }
