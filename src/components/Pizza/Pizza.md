@@ -1,5 +1,3 @@
-Pizza:
+Pizza
 
-```js
-<Pizza text="🍕" />
-```
+    <Pizza text="🍕" />

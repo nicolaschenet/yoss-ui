@@ -1,15 +1,20 @@
-import { PropTypes as T } from 'prop-types'
 import React, { Component } from 'react'
+
+import { PropTypes as T } from 'prop-types'
 import classnames from 'classnames'
 import styled from 'styled-components'
 
 class ButtonComponent extends Component {
   static propTypes = {
-    className: T.string.isRequired,
     children: T.node.isRequired,
+    className: T.string.isRequired,
     cta: T.bool.isRequired,
     disabled: T.bool.isRequired,
     info: T.bool.isRequired,
+    large: T.bool.isRequired,
+    medium: T.bool.isRequired,
+    onClick: T.func.isRequired,
+    small: T.bool.isRequired,
     type: T.oneOf(['button', 'reset', 'submit']).isRequired,
   }
 
@@ -17,40 +22,74 @@ class ButtonComponent extends Component {
     cta: false,
     disabled: false,
     info: false,
+    large: false,
+    medium: false,
+    onClick: console.log, // eslint-disable-line no-console
+    small: false,
     type: 'button',
   }
 
   render() {
-    const { children, className, cta, disabled, info, type } = this.props
-    const classNames = classnames(className, 'Button', {
+    const { children, className, onClick, type } = this.props
+    const { cta, disabled, info } = this.props
+    const { large, medium, small } = this.props
+    const size = classnames({ large, medium, small }) || 'medium'
+    const classNames = classnames(className, 'Button', `Button--${size}`, {
       'Button--cta': cta,
       'Button--disabled': disabled,
       'Button--info': info,
     })
+    const buttonProps = {
+      className: classNames,
+      disabled,
+      onClick,
+      type,
+    }
 
-    return (
-      <button type={type} className={classNames}>
-        {children}
-      </button>
-    )
+    return <button {...buttonProps}>{children}</button>
   }
 }
 
 const Button = styled(ButtonComponent)`
-  background-color: #eee;
+  padding: 15px 32px;
   border: 0;
   border-radius: 3px;
-  color: #022144;
-  cursor: pointer;
-  font-family: 'Work Sans', sans-serif;
   outline: 0;
-  padding: 15px 32px;
-  font-size: 16px;
-  font-weight: normal !important;
+  margin-right: 8px;
+
+  background-color: #eee;
+  color: #022144;
+
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+
+  cursor: pointer;
   transition: all 0.3s ease;
 
-  @media (max-width: 1100px) {
-    font-size: 20px !important;
+  &.Button--small {
+    font-size: 12px;
+  }
+
+  &.Button--medium {
+    font-size: 16px;
+  }
+
+  &.Button--large {
+    font-size: 20px;
+  }
+
+  @media (min-width: 1100px) {
+    &.Button--small {
+      font-size: 16px;
+    }
+
+    &.Button--medium {
+      font-size: 20px;
+    }
+
+    &.Button--large {
+      font-size: 24px;
+    }
   }
 
   &:hover,
@@ -62,16 +101,16 @@ const Button = styled(ButtonComponent)`
     background-color: #ffed00;
   }
 
-  &.Button--disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
   &.Button--info {
     background-color: #237eb1;
     color: #fff;
   }
+
+  &.Button--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `
 
-/** @component */
+/* @component */
 export default Button

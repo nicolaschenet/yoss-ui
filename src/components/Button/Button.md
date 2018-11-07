@@ -1,6 +1,6 @@
 Basic button
 
-    <Button>Click me</Button>
+    <Button>I'm a button</Button>
 
 CTA button
 
@@ -14,6 +14,12 @@ Disabled button
 
     <Button disabled>I'm disabled</Button>
 
-Disabled Info button
+Small medium and large buttons
 
-    <Button disabled info>Importer depuis LinkedIn</Button>
+    <Button small>Small button</Button>
+    <Button medium>Medium button</Button>
+    <Button large>Large button</Button>
+
+Button with custom `onClick` prop
+
+    <Button onClick={() => alert('Foobar')}>Foobar alert</Button>
