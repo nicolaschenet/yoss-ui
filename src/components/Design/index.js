@@ -4,5 +4,4 @@ const Design = {}
 
 Design.Reset = Reset
 
-/* @component */
 export default Design
