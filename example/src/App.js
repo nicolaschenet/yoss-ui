@@ -1,13 +1,13 @@
 import { Button, Design } from 'yoss-ui'
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Button cta>Allez clique !</Button>
+      <Fragment>
         <Design.Reset />
-      </div>
+        <Button cta>Allez clique !</Button>
+      </Fragment>
     )
   }
 }
