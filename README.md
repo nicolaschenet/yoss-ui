@@ -12,19 +12,14 @@ npm install --save yoss-ui
 
 ## Usage
 
-```jsx
-import React, { Component } from 'react'
+    import React, { Component } from 'react'
+    import { MyComponent } from 'yoss-ui'
 
-import MyComponent from 'yoss-ui'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
-```
+    class Example extends Component {
+      render() {
+        return <MyComponent />
+      }
+    }
 
 ## License
 

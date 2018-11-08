@@ -1,5 +1,6 @@
-import { PropTypes as T } from 'prop-types'
 import React, { Component } from 'react'
+
+import { PropTypes as T } from 'prop-types'
 import styled from 'styled-components'
 
 class PizzaComponent extends Component {
@@ -19,5 +20,5 @@ const Pizza = styled(PizzaComponent)`
   color: red;
 `
 
-/** @component */
+/* @component */
 export default Pizza
