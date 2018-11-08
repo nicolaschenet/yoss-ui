@@ -109,13 +109,13 @@
     ],
     "radix": "error",
     "rest-spread-spacing": "error",
-    "semi": [2, "never"],
+    "semi": ["error", "never"],
     "sort-imports-es6-autofix/sort-imports-es6": [
-      2,
+      "error",
       {
         "ignoreCase": false,
         "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
       }
     ],
     "sort-vars": "error",

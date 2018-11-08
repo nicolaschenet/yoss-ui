@@ -1,24 +1,21 @@
 import React, { Component } from 'react'
-
-import { PropTypes as T } from 'prop-types'
 import styled from 'styled-components'
+import { PropTypes as T } from 'prop-types'
 
 class PizzaComponent extends Component {
   static propTypes = {
-    className: T.string,
-    text: T.string,
+    className: T.string.isRequired,
+    text: T.string.isRequired,
   }
 
   render() {
     const { className, text } = this.props
 
-    return <div className={`${className} pizza`}>Pizza Component: {text}</div>
+    return <div className={`${className} Pizza`}>Pizza Component: {text}</div>
   }
 }
 
-const Pizza = styled(PizzaComponent)`
-  color: red;
-`
+const Pizza = styled(PizzaComponent)``
 
 /* @component */
 export default Pizza

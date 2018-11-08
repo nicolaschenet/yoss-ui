@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-
-import { PropTypes as T } from 'prop-types'
 import classnames from 'classnames'
 import styled from 'styled-components'
+import { PropTypes as T } from 'prop-types'
 
 class ButtonComponent extends Component {
   static propTypes = {

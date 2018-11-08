@@ -1,3 +1,3 @@
 Pizza
 
-    <Pizza text="🍕" />
+    <Pizza text='🍕' />
